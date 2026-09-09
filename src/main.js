@@ -63,10 +63,14 @@ function initApp() {
   
   // Set initial view mode based on screen width
   if (window.innerWidth < 1024) {
-    zoomSelect.value = 'auto';
+    if (zoomSelect) zoomSelect.value = 'auto';
     currentZoom = 'auto';
+    setViewMode('form');
+  } else {
+    if (zoomSelect) zoomSelect.value = '0.90';
+    currentZoom = 0.90;
+    setViewMode('form');
   }
-  setViewMode('form');
 
   loadForm(activeFormId);
 }
@@ -99,12 +103,16 @@ function setViewMode(mode) {
   mobileNavEdit?.classList.toggle('active', mode === 'form');
   mobileNavPreview?.classList.toggle('active', mode === 'preview');
 
-  // If switched to preview and zoom is auto, recalculate scale immediately
-  if (mode === 'preview') {
-    requestAnimationFrame(() => {
-      applyCurrentZoom();
-    });
+  // If on mobile or tablet, default to auto-fit zoom so the document fits the screen width perfectly
+  if (window.innerWidth < 1024 && mode === 'preview') {
+    if (zoomSelect) zoomSelect.value = 'auto';
+    currentZoom = 'auto';
   }
+
+  // Recalculate zoom on next animation frame once panel is visible
+  requestAnimationFrame(() => {
+    applyCurrentZoom();
+  });
 }
 
 // Auto-Fit Zoom Calculation for Perfect Responsive Document Viewing
@@ -116,8 +124,10 @@ function applyCurrentZoom() {
     const padding = isMobile ? 24 : 48;
     const availableWidth = previewViewport.clientWidth - padding;
     // Standard A4 page width is 794px
-    const autoScale = Math.min(Math.max(availableWidth / 794, 0.32), 1.20);
-    previewContainer.style.transform = `scale(${autoScale.toFixed(3)})`;
+    if (availableWidth > 80) {
+      const autoScale = Math.min(Math.max(availableWidth / 794, 0.30), 1.20);
+      previewContainer.style.transform = `scale(${autoScale.toFixed(3)})`;
+    }
   } else {
     const numericZoom = parseFloat(currentZoom) || 0.90;
     previewContainer.style.transform = `scale(${numericZoom})`;
@@ -321,11 +331,21 @@ function updatePreview() {
   const formDef = getFormById(activeFormId);
   if (!formDef || !previewContainer) return;
 
-  // Render Template with Text-Guard to guarantee layout budget
-  const guardedHtml = applyTextGuard(formDef.renderTemplate, activeFormData);
-  previewContainer.innerHTML = guardedHtml;
+  // 1. Render Template HTML with active form data
+  const renderedHtml = formDef.renderTemplate(activeFormData);
+  previewContainer.innerHTML = renderedHtml;
 
-  // Validate Page Budget
+  // 2. Apply Text-Guard on rendered elements
+  try {
+    applyTextGuard(previewContainer);
+  } catch (err) {
+    console.warn('Text guard warning:', err);
+  }
+
+  // 3. Ensure responsive zoom is computed
+  applyCurrentZoom();
+
+  // 4. Validate Page Budget
   validateBudget();
 }
 

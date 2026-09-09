@@ -2,7 +2,7 @@
 // Ensures entered values do not push single-page forms onto second pages.
 
 export function applyTextGuard(containerEl, maxAllowedHeightPx = 1122) { // 297mm at 96dpi is ~1122px
-  if (!containerEl) return { valid: true, overflowPx: 0 };
+  if (!containerEl || typeof containerEl.querySelectorAll !== 'function') return { valid: true, overflowPx: 0 };
 
   const pages = containerEl.querySelectorAll('.doc-page');
   const results = [];
