@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iqra University — Digital PhD & Master's Forms Portal</title>
+  <link rel="stylesheet" href="/styles/print-base.css" />
+  <link rel="stylesheet" href="/styles/app.css" />
+</head>
+<body>
+  <!-- Header Bar -->
+  <header class="app-header no-print">
+    <div class="brand-section">
+      <img src="/assets/iqra-logo.png" alt="Iqra University" class="app-brand-logo" />
+      <div>
+        <div class="brand-title">IQRA UNIVERSITY — DIGITAL ACADEMIC FORMS</div>
+        <div class="brand-subtitle">Official Postgraduate Forms & Precision PDF Generation System</div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button id="btn-sample-data" class="btn btn-secondary" title="Populate with realistic official sample data">
+        <span>✨ Fill Sample Data</span>
+      </button>
+      <button id="btn-reset-form" class="btn btn-secondary" title="Clear all entered fields">
+        <span>↺ Clear</span>
+      </button>
+      <button id="btn-export-json" class="btn btn-secondary" title="Export current form data to JSON">
+        <span>📥 Export Data</span>
+      </button>
+      <button id="btn-browser-print" class="btn btn-primary" title="Print or save as PDF using high-resolution browser engine">
+        <span>🖨️ Direct Print / PDF</span>
+      </button>
+      <button id="btn-server-pdf" class="btn btn-success" title="Generate authoritative PDF using Puppeteer backend">
+        <span>📄 Download Official PDF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Portal Layout -->
+  <div class="app-layout">
+    <!-- Sidebar: Stage & Form Navigation -->
+    <aside class="app-sidebar no-print">
+      <div class="sidebar-search-box">
+        <input type="text" id="form-search-input" placeholder="🔍 Search official forms..." />
+      </div>
+      <div class="sidebar-nav" id="sidebar-nav-container">
+        <!-- Injected dynamically by main.js -->
+      </div>
+    </aside>
+
+    <!-- Dual-Pane Workspace -->
+    <div class="workspace-container">
+      <!-- Left: Interactive Form Pane -->
+      <section class="app-form-pane no-print">
+        <div class="form-pane-header">
+          <div>
+            <div class="form-pane-title" id="active-form-title">Select an Official Form</div>
+            <div style="font-size: 11px; color: var(--text-secondary);" id="active-form-code">IU Official Document</div>
+          </div>
+          <span id="page-budget-badge" class="status-pill success">1 Page Official</span>
+        </div>
+
+        <div class="form-pane-body" id="form-inputs-container">
+          <!-- Dynamic Input Controls injected here -->
+        </div>
+      </section>
+
+      <!-- Right: Live Document Preview Pane -->
+      <section class="app-preview-pane">
+        <div class="preview-toolbar no-print">
+          <div class="preview-toolbar-left">
+            <span style="font-size: 12px; font-weight: 600; color: #fff;">LIVE DOCUMENT PREVIEW</span>
+            <span id="preview-status" class="status-pill success">✓ Layout Validated</span>
+          </div>
+
+          <div class="preview-toolbar-right">
+            <label style="font-size: 12px; color: #ccc;" for="zoom-select">Zoom:</label>
+            <select id="zoom-select" class="preview-scale-select">
+              <option value="0.65">65%</option>
+              <option value="0.80">80%</option>
+              <option value="0.90" selected>90%</option>
+              <option value="1.0">100% (Actual)</option>
+              <option value="1.15">115%</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="preview-viewport" id="preview-viewport">
+          <div class="preview-container preview-mode" id="preview-container">
+            <!-- Official HTML Page Template rendered here in real time -->
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

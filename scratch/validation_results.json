@@ -1,0 +1,152 @@
+[
+  {
+    "formId": "phd-a",
+    "code": "Form PhD-A",
+    "title": "RECOMMENDATIONS FOR ADMISSION TO THE PHD PROGRAM",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-a.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-a.png"
+  },
+  {
+    "formId": "phd-b",
+    "code": "Form PhD-B",
+    "title": "PROVISIONAL ADMISSION TO THE PhD PROGRAM",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-b.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-b.png"
+  },
+  {
+    "formId": "phd-01",
+    "code": "Form PhD-1",
+    "title": "FORMULATION OF GRADUATE STUDENT EVALUATION COMMITTEE (GSEC)",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-01.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-01.png"
+  },
+  {
+    "formId": "phd-02",
+    "code": "Form PhD-2",
+    "title": "PETITION FOR CHANGE IN THE RESEARCH TOPIC AND/OR GRADUATE STUDENT EVALUATION COMMITTEE (GSEC)",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-02.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-02.png"
+  },
+  {
+    "formId": "phd-03",
+    "code": "Form PhD-3",
+    "title": "MINUTES OF GSEC MEETING",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-03.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-03.png"
+  },
+  {
+    "formId": "phd-comp-sup",
+    "code": "IU-COMP-SUP",
+    "title": "PHD COMPREHENSIVE EXAMINATION — SUPERVISOR APPROVAL FORM",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-comp-sup.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-comp-sup.png"
+  },
+  {
+    "formId": "phd-04",
+    "code": "Form PhD-4",
+    "title": "REPORT OF COMPREHENSIVE EXAMINATION",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-04.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-04.png"
+  },
+  {
+    "formId": "phd-proposal",
+    "code": "IU-PROP-SCHED",
+    "title": "SCHEDULE FOR PhD PROPOSAL DEFENSE",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-proposal.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-proposal.png"
+  },
+  {
+    "formId": "phd-5-internal",
+    "code": "Form PhD-5",
+    "title": "SCHEDULE FOR PhD PROPOSAL DEFENSE (INTERNAL USED ONLY)",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-5-internal.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-5-internal.png"
+  },
+  {
+    "formId": "phd-05a",
+    "code": "Form PhD-5a",
+    "title": "PROPOSAL DEFENSE EVALUATION REPORT",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-05a.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-05a.png"
+  },
+  {
+    "formId": "phd-05b",
+    "code": "Form PhD-5b",
+    "title": "PhD Thesis Proposal Defense Certificate",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-05b.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-05b.png"
+  },
+  {
+    "formId": "phd-06a",
+    "code": "Form PhD-6a",
+    "title": "INTERNAL EVALUATION FORM FOR PHD DISSERTATION",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-06a.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-06a.png"
+  },
+  {
+    "formId": "phd-06b",
+    "code": "Form PhD-6b",
+    "title": "PRE-DEFENSE FORM FOR PHD DISSERTATION",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-06b.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-06b.png"
+  },
+  {
+    "formId": "phd-08",
+    "code": "Form PhD-8",
+    "title": "REPORT OF DOCTORAL THESIS DEFENSE",
+    "expectedPages": 1,
+    "actualPages": 1,
+    "passed": true,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-08.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-08.png"
+  },
+  {
+    "formId": "phd-07",
+    "code": "Form PhD-7",
+    "title": "THESIS EVALUATION REPORT (DEPARTMENT SUMMARY & TEC RESPONSES 7a-7i)",
+    "expectedPages": 10,
+    "actualPages": 1,
+    "passed": false,
+    "pdfPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_pdfs\\phd-07.pdf",
+    "imgPath": "C:\\Users\\Abdul Nafay\\OneDrive\\Documents\\Desktop\\phd form\\scratch\\generated_images\\phd-07.png"
+  }
+]

@@ -1,0 +1,282 @@
+/* ==========================================================================
+   Iqra University Official Forms — Universal Base Print Stylesheet
+   Source of Truth: Original Iqra University Word / PDF Official Documents
+   ========================================================================== */
+
+/* Universal Reset for Document Pages */
+.doc-page {
+  width: 210mm;
+  min-height: 297mm;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Times New Roman", Times, Georgia, serif;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+}
+
+/* Screen Preview Styling */
+.preview-mode .doc-page {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  margin: 0 auto 30px auto;
+  border-radius: 2px;
+}
+
+/* Base Official Typography */
+.doc-page h1,
+.doc-page h2,
+.doc-page h3,
+.doc-page p,
+.doc-page table,
+.doc-page span,
+.doc-page div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Official Header Styles Matching Original Word Documents */
+.iu-official-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 10px;
+  padding-top: 0;
+}
+
+.iu-logo-container {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.iu-logo-img {
+  height: 52px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+}
+
+.iu-header-text-block {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+  line-height: 1.25;
+}
+
+.iu-header-text-block .form-id {
+  font-size: 8.5pt;
+  font-weight: normal;
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  color: #000000;
+}
+
+.iu-header-text-block .doc-program {
+  font-size: 8pt;
+  font-weight: normal;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.iu-header-text-block .type-written {
+  font-size: 7.5pt;
+  font-style: normal;
+  color: #000000;
+}
+
+/* Official Main Heading */
+.doc-main-title {
+  text-align: center;
+  font-size: 11.5pt;
+  font-weight: bold;
+  margin: 8px 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  line-height: 1.25;
+  color: #000000;
+}
+
+.doc-main-title.underlined {
+  text-decoration: underline;
+}
+
+.doc-subtitle {
+  text-align: center;
+  font-size: 9.5pt;
+  font-style: italic;
+  margin-top: -6px;
+  margin-bottom: 10px;
+}
+
+/* Official Section Headings */
+.official-section-title {
+  text-align: center;
+  font-size: 10pt;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 10px 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.official-center-note {
+  text-align: center;
+  font-size: 8.5pt;
+  font-style: italic;
+  margin: -4px 0 8px 0;
+}
+
+/* Official Table Styles */
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 9.5pt;
+}
+
+.doc-table th,
+.doc-table td {
+  border: 1px solid #000000;
+  padding: 4px 6px;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+
+.doc-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Official Checkboxes */
+.iu-checkbox {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 14px;
+  font-size: 9pt;
+}
+
+.iu-box {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #000000;
+  margin-right: 5px;
+  position: relative;
+  vertical-align: middle;
+  background-color: #fff;
+}
+
+.iu-box.checked::after {
+  content: "✓";
+  position: absolute;
+  top: -3px;
+  left: 1px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Underline Field Displays */
+.field-underline {
+  display: inline-block;
+  border-bottom: 1px solid #000000;
+  padding: 0 4px;
+  min-height: 15px;
+  vertical-align: bottom;
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  font-size: 9.5pt;
+  color: #002244;
+  font-weight: 500;
+}
+
+/* Official Signatures & Approvals */
+.signature-block {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin-top: 10px;
+}
+
+.signature-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 10px 0;
+  font-size: 9.5pt;
+}
+
+.signature-col {
+  width: 48%;
+  line-height: 1.25;
+}
+
+.signature-line {
+  border-bottom: 1px solid #000000;
+  min-height: 16px;
+  margin-bottom: 2px;
+  font-weight: 500;
+  font-family: Arial, sans-serif;
+  color: #002244;
+}
+
+/* Official Distribution and Notes */
+.doc-distribution {
+  font-size: 7.5pt;
+  line-height: 1.2;
+  margin-top: 10px;
+  border-top: 0.5px solid #666;
+  padding-top: 4px;
+}
+
+.doc-notes {
+  font-size: 7.5pt;
+  line-height: 1.2;
+  margin-top: 6px;
+}
+
+/* Print CSS Enforcement */
+@media print {
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print,
+  .app-sidebar,
+  .app-header,
+  .app-form-pane,
+  .preview-toolbar,
+  .btn,
+  .modal-overlay {
+    display: none !important;
+  }
+
+  .app-preview-pane {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    overflow: visible !important;
+  }
+
+  .preview-mode .doc-page {
+    box-shadow: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .doc-page:last-child {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+}
