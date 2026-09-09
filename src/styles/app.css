@@ -1,6 +1,6 @@
 /* ==========================================================================
    Iqra University Forms Portal — Application UI Theme & Layout
-   Clean, modern academic administration workspace
+   Fully Responsive for Desktop, Laptop, Tablet, and Mobile
    ========================================================================== */
 
 :root {
@@ -20,78 +20,133 @@
   --danger: #EF4444;
   --success: #10B981;
   --warning: #F59E0B;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.15);
+  --header-height: 60px;
+  --bottom-bar-height: 60px;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--text-primary);
   background-color: var(--bg-app);
-  height: 100vh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-/* App Header */
+/* ==========================================================================
+   1. App Header
+   ========================================================================== */
 .app-header {
-  height: 60px;
-  background-color: var(--iu-blue-dark);
+  height: var(--header-height);
+  background: linear-gradient(135deg, var(--iu-blue-dark) 0%, #001f3f 100%);
   border-bottom: 2px solid var(--iu-gold);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 16px;
   color: #ffffff;
   z-index: 100;
   flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .brand-section {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Sidebar Toggle Hamburger (visible on < 1024px) */
+.btn-sidebar-toggle {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-sidebar-toggle:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.hamburger-icon {
+  font-size: 16px;
+  line-height: 1;
 }
 
 .app-brand-logo {
-  height: 34px;
+  height: 36px;
+  width: auto;
   background: #ffffff;
-  padding: 3px 6px;
+  padding: 3px 8px;
   border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-text-block {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .brand-title {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brand-subtitle {
   font-size: 11px;
   color: #94A3B8;
   font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* Header Action Buttons */
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   padding: 8px 14px;
   font-size: 13px;
@@ -100,20 +155,28 @@ body {
   border: none;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.97);
 }
 
 .btn-secondary {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.14);
   color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.22);
 }
 
 .btn-primary {
   background-color: var(--iu-blue-accent);
   color: #ffffff;
+  box-shadow: 0 2px 4px rgba(2, 108, 223, 0.3);
 }
 
 .btn-primary:hover {
@@ -121,67 +184,134 @@ body {
 }
 
 .btn-success {
-  background-color: var(--success);
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
   color: #ffffff;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.35);
 }
 
 .btn-success:hover {
-  background-color: #059669;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
 }
 
-/* App Main Container */
+.mobile-more-btn {
+  display: none;
+}
+
+/* ==========================================================================
+   2. Main Layout Structure
+   ========================================================================== */
 .app-layout {
   display: flex;
   flex: 1;
   overflow: hidden;
+  position: relative;
 }
 
-/* Sidebar Drawer */
+/* ==========================================================================
+   3. Sidebar Navigation Drawer
+   ========================================================================== */
 .app-sidebar {
   width: 290px;
   background-color: var(--bg-sidebar);
   color: #F8FAFC;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #334155;
+  border-right: 1px solid #1E293B;
   flex-shrink: 0;
+  z-index: 50;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-header-mobile {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid #1E293B;
+  background-color: #0c1322;
+}
+
+.sidebar-mobile-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+.btn-close-sidebar {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidebar-search-box {
-  padding: 14px 16px;
+  padding: 12px 14px;
   border-bottom: 1px solid #1E293B;
+  background-color: #0b111e;
 }
 
 .sidebar-search-box input {
   width: 100%;
-  padding: 8px 12px;
-  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
   background-color: #1E293B;
   border: 1px solid #334155;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 13px;
+  transition: border-color 0.15s ease;
 }
 
 .sidebar-search-box input:focus {
   outline: none;
   border-color: var(--iu-blue-accent);
+  background-color: #27354a;
 }
 
 .sidebar-nav {
   flex: 1;
   overflow-y: auto;
   padding: 12px 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sidebar-footer {
+  padding: 10px 16px;
+  border-top: 1px solid #1E293B;
+  background-color: #0b111e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.forms-count-badge {
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.system-status-indicator {
+  color: #10B981;
+  font-weight: 600;
 }
 
 .stage-group {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .stage-title {
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #64748B;
+  color: #94A3B8;
   letter-spacing: 0.6px;
   padding: 4px 10px 8px 10px;
 }
@@ -189,19 +319,20 @@ body {
 .form-item-btn {
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
-  padding: 8px 10px;
+  padding: 10px 12px;
   border-radius: var(--radius-sm);
   background: transparent;
   border: none;
   color: #CBD5E1;
   text-align: left;
   cursor: pointer;
-  font-size: 12px;
-  line-height: 1.3;
-  margin-bottom: 2px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  margin-bottom: 3px;
   transition: all 0.15s ease;
+  min-height: 42px;
 }
 
 .form-item-btn:hover {
@@ -210,29 +341,107 @@ body {
 }
 
 .form-item-btn.active {
-  background-color: var(--iu-blue-primary);
+  background: linear-gradient(135deg, var(--iu-blue-primary) 0%, #00366b 100%);
   color: #ffffff;
   font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .form-badge {
   font-size: 10px;
   font-weight: 700;
   background-color: rgba(255, 255, 255, 0.15);
-  padding: 1px 5px;
-  border-radius: 3px;
+  padding: 2px 6px;
+  border-radius: 4px;
   white-space: nowrap;
+  letter-spacing: 0.3px;
 }
 
-/* Dual Pane Workspace */
+/* Sidebar Backdrop on Mobile */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(2px);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.sidebar-backdrop.active {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   4. Workspace Container & Responsive Tabs
+   ========================================================================== */
 .workspace-container {
   display: flex;
+  flex-direction: column;
   flex: 1;
   overflow: hidden;
   background-color: #EDF2F7;
 }
 
-/* Left Pane: Digital Form */
+/* Responsive View Switcher Bar (Mobile & Tablet) */
+.workspace-tabs-bar {
+  display: none;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 6px 12px;
+  gap: 8px;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.workspace-tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background-color: #F1F5F9;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 42px;
+}
+
+.workspace-tab-btn.active {
+  background-color: var(--iu-blue-primary);
+  border-color: var(--iu-blue-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.tab-mini-badge {
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+/* Workspace Panels Split/Tabbed Wrapper */
+.workspace-panels {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ==========================================================================
+   5. Form Inputs Pane
+   ========================================================================== */
 .app-form-pane {
   width: 480px;
   background-color: #ffffff;
@@ -241,6 +450,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   flex-shrink: 0;
+  z-index: 5;
 }
 
 .form-pane-header {
@@ -250,24 +460,62 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #F8FAFC;
+  gap: 12px;
+}
+
+.form-pane-info {
+  min-width: 0;
 }
 
 .form-pane-title {
   font-size: 14px;
   font-weight: 700;
   color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form-pane-sub {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.form-pane-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-switch-preview-sm {
+  display: none;
+  background: var(--iu-blue-light);
+  color: var(--iu-blue-primary);
+  border: 1px solid #bfdbfe;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 9px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
 }
 
 .form-pane-body {
   flex: 1;
   overflow-y: auto;
   padding: 20px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .form-section {
-  margin-bottom: 24px;
-  padding-bottom: 18px;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--border-subtle);
+}
+
+.form-section:last-child {
+  border-bottom: none;
 }
 
 .form-section-title {
@@ -277,6 +525,9 @@ body {
   color: var(--iu-blue-primary);
   margin-bottom: 12px;
   letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .form-group {
@@ -285,7 +536,7 @@ body {
 
 .form-group label {
   display: block;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 5px;
@@ -295,13 +546,20 @@ body {
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 8px 10px;
+  padding: 10px 12px;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-primary);
   background-color: #ffffff;
-  transition: border-color 0.15s ease;
+  transition: all 0.15s ease;
+  min-height: 42px;
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+  line-height: 1.4;
 }
 
 .form-group input:focus,
@@ -309,7 +567,8 @@ body {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--border-focus);
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+  background-color: #fafcff;
 }
 
 .form-row {
@@ -321,7 +580,9 @@ body {
   flex: 1;
 }
 
-/* Right Pane: Live Document Preview Dock */
+/* ==========================================================================
+   6. Live Document Preview Pane
+   ========================================================================== */
 .app-preview-pane {
   flex: 1;
   display: flex;
@@ -332,53 +593,235 @@ body {
 
 .preview-toolbar {
   height: 48px;
-  background-color: #323639;
+  background-color: #272a2d;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  border-bottom: 1px solid #202224;
+  padding: 0 16px;
+  border-bottom: 1px solid #1a1c1d;
   flex-shrink: 0;
+  gap: 10px;
 }
 
 .preview-toolbar-left,
 .preview-toolbar-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+}
+
+.preview-toolbar-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e2e8f0;
+  letter-spacing: 0.3px;
+}
+
+.zoom-label {
+  font-size: 12px;
+  color: #94A3B8;
 }
 
 .preview-scale-select {
-  background-color: #202224;
+  background-color: #1a1c1d;
   color: #ffffff;
-  border: 1px solid #444;
-  padding: 4px 8px;
+  border: 1px solid #475569;
+  padding: 5px 8px;
   border-radius: var(--radius-sm);
   font-size: 12px;
+  cursor: pointer;
+  min-height: 32px;
+}
+
+.btn-fit-screen {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-fit-screen:hover {
+  background-color: rgba(255, 255, 255, 0.24);
 }
 
 .preview-viewport {
   flex: 1;
   overflow-y: auto;
   overflow-x: auto;
-  padding: 30px;
+  padding: 24px 16px 80px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  -webkit-overflow-scrolling: touch;
 }
 
 .preview-container {
   transform-origin: top center;
-  transition: transform 0.15s ease;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  margin-bottom: 40px;
 }
 
-/* Toast / Status banner */
+/* ==========================================================================
+   7. Mobile Bottom Navigation Bar (Appears on Mobile)
+   ========================================================================== */
+.mobile-bottom-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--bottom-bar-height);
+  background-color: #0f172a;
+  border-top: 1px solid #334155;
+  z-index: 900;
+  padding: 0 8px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  gap: 3px;
+  cursor: pointer;
+  padding: 6px 0;
+  transition: all 0.15s ease;
+}
+
+.mobile-nav-item .nav-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.mobile-nav-item .nav-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.mobile-nav-item.active {
+  color: #38bdf8;
+}
+
+.mobile-nav-item.primary-action {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.mobile-nav-item.primary-action:active {
+  transform: scale(0.92);
+}
+
+/* ==========================================================================
+   8. Mobile Actions Menu Sheet
+   ========================================================================== */
+.mobile-actions-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(3px);
+  z-index: 999;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.mobile-actions-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-actions-menu-content {
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  border-radius: 16px 16px 0 0;
+  padding: 16px 20px 30px 20px;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(100%);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+}
+
+.mobile-actions-menu.active .mobile-actions-menu-content {
+  transform: translateY(0);
+}
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 12px;
+}
+
+.btn-close-sheet {
+  background: #f1f5f9;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mobile-menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-menu-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mobile-menu-btn:hover,
+.mobile-menu-btn:active {
+  background-color: var(--iu-blue-light);
+  border-color: var(--iu-blue-accent);
+  color: var(--iu-blue-primary);
+}
+
+/* ==========================================================================
+   9. Status Pills & Toast
+   ========================================================================== */
 .status-pill {
   font-size: 11px;
   padding: 3px 8px;
   border-radius: 12px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .status-pill.success {
@@ -389,4 +832,184 @@ body {
 .status-pill.warning {
   background-color: #FEF3C7;
   color: #92400E;
+}
+
+/* ==========================================================================
+   10. MEDIA QUERIES FOR TABLETS & LAPTOPS (768px - 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .btn-sidebar-toggle {
+    display: inline-flex;
+  }
+
+  .app-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 85vw;
+    z-index: 1000;
+    transform: translateX(-100%);
+    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.4);
+  }
+
+  .app-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-header-mobile {
+    display: flex;
+  }
+
+  .workspace-tabs-bar {
+    display: flex;
+  }
+
+  /* When tabs are active, panels toggle */
+  .workspace-panels .app-form-pane,
+  .workspace-panels .app-preview-pane {
+    width: 100%;
+    flex: 1;
+  }
+
+  .workspace-panels.view-form .app-preview-pane {
+    display: none;
+  }
+
+  .workspace-panels.view-form .app-form-pane {
+    display: flex;
+  }
+
+  .workspace-panels.view-preview .app-form-pane {
+    display: none;
+  }
+
+  .workspace-panels.view-preview .app-preview-pane {
+    display: flex;
+  }
+
+  .btn-switch-preview-sm {
+    display: inline-block;
+  }
+
+  /* Condense Header Actions */
+  .action-btn-reset,
+  .action-btn-export {
+    display: none;
+  }
+
+  .mobile-more-btn {
+    display: inline-flex;
+  }
+}
+
+/* ==========================================================================
+   11. MEDIA QUERIES FOR MOBILE PHONES (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 54px;
+  }
+
+  body {
+    /* Prevent rubber banding on iOS */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
+  .app-header {
+    padding: 0 10px;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .brand-title {
+    font-size: 13px;
+  }
+
+  .btn-sidebar-toggle-text {
+    display: none;
+  }
+
+  .btn-sidebar-toggle {
+    padding: 6px 9px;
+  }
+
+  .app-brand-logo {
+    height: 28px;
+    padding: 2px 5px;
+  }
+
+  /* In mobile header: only show Download PDF and More */
+  .action-btn-sample,
+  .action-btn-print {
+    display: none;
+  }
+
+  .action-btn-download span {
+    display: none;
+  }
+
+  .action-btn-download::after {
+    content: "PDF";
+    font-weight: 700;
+  }
+
+  .action-btn-download {
+    padding: 7px 12px;
+  }
+
+  .mobile-more-btn {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .mobile-more-btn span {
+    display: none;
+  }
+
+  .mobile-more-btn::after {
+    content: "⚙️";
+    font-size: 14px;
+  }
+
+  /* Form Inputs Stack Vertically */
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Input sizing on mobile (prevent iOS zoom on focus) */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px;
+    min-height: 44px;
+  }
+
+  .form-pane-body {
+    padding: 14px 14px 80px 14px;
+  }
+
+  .preview-viewport {
+    padding: 16px 8px 90px 8px;
+  }
+
+  /* Show Mobile Bottom Bar */
+  .mobile-bottom-bar {
+    display: flex;
+  }
+
+  .preview-toolbar {
+    padding: 0 10px;
+    height: 42px;
+  }
+
+  .preview-toolbar-title {
+    display: none;
+  }
 }
